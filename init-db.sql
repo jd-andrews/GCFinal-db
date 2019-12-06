@@ -21,6 +21,10 @@ where id=2;
 update questions
 set rating2=1
 
+update questions 
+set scenario = 'Find $50'
+where id=3;
+
 update questions
 set scenario2='Give a homeless person $5'
 where id=3;
@@ -32,3 +36,23 @@ where id=4;
 update questions
 set scenario2='Have your cat run away'
 where id=5;
+
+insert into questions(scenario, scenario2)
+values('Always be hungry', 'Always be tired');
+
+insert into questions(scenario, scenario2)
+values('Live to age 100', 'Have immortal life');
+
+
+
+-- below scenarios have not actually been added to the table yet, 
+-- just typing new scenarios here for pre-approval
+
+insert into questions(scenario, scenario2)
+values('', '');
+
+insert into questions(scenario, scenario2)
+values('', '');
+
+insert into questions(scenario, scenario2)
+values('', '');
