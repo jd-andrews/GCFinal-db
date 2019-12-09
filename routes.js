@@ -52,7 +52,12 @@ routes.get("/ratingnum1/:id", (req, res) => {
   const id = req.params.id;
   const sql = `SELECT rating FROM questions WHERE id=${id}`;
   pool.query(sql).then(result => {
-    res.json(result.rows[0].rating);
+    if (result.rows.length === 0) {
+      res.status(404);
+      res.send("Not found, ID: " + id);
+    } else {
+      res.json(result.rows[0].rating);
+    }
   });
 });
 
@@ -61,7 +66,12 @@ routes.get("/ratingnum2/:id", (req, res) => {
   const id = req.params.id;
   const sql = `SELECT rating2 FROM questions WHERE id=${id}`;
   pool.query(sql).then(result => {
-    res.json(result.rows[0].rating2);
+    if (result.rows.length === 0) {
+      res.status(404);
+      res.send("Not found, ID: " + id);
+    } else {
+      res.json(result.rows[0].rating2);
+    }
   });
 });
 
