@@ -2,7 +2,7 @@ CREATE TABLE questions (ID SERIAL UNIQUE PRIMARY KEY, scenario VARCHAR(480),rati
 INSERT INTO questions (scenario, rating, alignment) VALUES ('Jump into a frozen lake?', 1, false);
 INSERT INTO questions (scenario, rating, alignment) VALUES ('Eat a cockroach', 1, false);
 INSERT INTO questions (scenario, rating, alignment) VALUES ('Find $5', 1, true);
-INSERT INTO questions (scenario, rating, alignment) VALUES ('Fined $5', 1, false);
+INSERT INTO questions (scenario, rating, alignment) VALUES ('Pay a $5 fine', 1, false);
 INSERT INTO questions (scenario, rating, alignment) VALUES ('Have your dog run away', 1, false);
 
 -- Friday 12.6. Added Scenario2 and Rating2 columns, inserted values
@@ -49,10 +49,10 @@ values('Live to age 100', 'Have immortal life');
 -- just typing new scenarios here for pre-approval
 
 insert into questions(scenario, scenario2)
-values('', '');
+values('Tomato be classified as a fruit', 'Tomato be classified as a vegetable');
 
 insert into questions(scenario, scenario2)
-values('', '');
+values('Travel back in time', 'Travel to the future');
 
 insert into questions(scenario, scenario2)
 values('', '');
