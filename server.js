@@ -5,7 +5,7 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 app.use("/", routes);
-const port = 3002;
+const port = 3003;
 app.listen(port, () => {
   console.log(`Express started. http://localhost:${port}`);
 });
