@@ -5,7 +5,7 @@ INSERT INTO questions (scenario, rating, alignment) VALUES ('Find $5', 1, true);
 INSERT INTO questions (scenario, rating, alignment) VALUES ('Pay a $5 fine', 1, false);
 INSERT INTO questions (scenario, rating, alignment) VALUES ('Have your dog run away', 1, false);
 
--- Friday 12.6. Added Scenario2 and Rating2 columns, inserted values
+
 alter table questions 
 add scenario2 varchar(480);
 alter table questions 

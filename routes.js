@@ -3,7 +3,15 @@ const pool = require("./connection");
 const routes = express.Router();
 
 routes.get("/questions", (req, res) => {
-  const sql = "SELECT * FROM questions";
+  const sql = "SELECT * FROM questions ORDER BY ID asc";
+  pool.query(sql).then(result => {
+    res.json(result.rows);
+  });
+});
+
+routes.get("/questions/:id", (req, res) => {
+  const id = req.params.id;
+  const sql = `SELECT * FROM questions WHERE id=${id}`;
   pool.query(sql).then(result => {
     res.json(result.rows);
   });
@@ -15,6 +23,23 @@ routes.get("/questions/random", (req, res) => {
   const params = [id];
   pool.query(sql, params).then(result => {
     res.json(result.rows[0]);
+  });
+});
+
+routes.put("/rating1/:id", (req, res) => {
+  const id = parseInt(req.params.id);
+  const sql = `UPDATE questions SET rating = rating + 1 WHERE id=${id}`;
+  pool.query(sql).then(result => {
+    res.json(result.row);
+  });
+});
+
+////Ratings
+routes.put("/rating2/:id", (req, res) => {
+  const id = parseInt(req.params.id);
+  const sql = `UPDATE questions SET rating2 = rating2 + 1 WHERE id=${id}`;
+  pool.query(sql).then(result => {
+    res.json(result.row);
   });
 });
 
