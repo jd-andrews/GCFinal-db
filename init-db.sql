@@ -1,4 +1,5 @@
 CREATE TABLE questions (ID SERIAL UNIQUE PRIMARY KEY, scenario VARCHAR(480),rating INT, alignment BOOLEAN);
+CREATE TABLE players (ID SERIAL UNIQUE PRIMARY KEY, playername VARCHAR(100), playerimage TEXT, playerscore INT  );
 INSERT INTO questions (scenario, rating, alignment) VALUES ('Jump into a frozen lake?', 1, false);
 INSERT INTO questions (scenario, rating, alignment) VALUES ('Eat a cockroach', 1, false);
 INSERT INTO questions (scenario, rating, alignment) VALUES ('Find $5', 1, true);
@@ -43,6 +44,10 @@ values('Always be hungry', 'Always be tired');
 insert into questions(scenario, scenario2)
 values('Live to age 100', 'Have immortal life');
 
+INSERT INTO players (playername, playerimage, playerscore) VALUES ('Big win boi', 'https://randomuser.me/api/portraits/men/75.jpg', 1999);
+INSERT INTO players (playername, playerimage, playerscore) VALUES ('Big lose person', 'https://randomuser.me/api/portraits/men/55.jpg', 0);
+INSERT INTO players (playername, playerimage, playerscore) VALUES ('Big win gorl', 'https://randomuser.me/api/portraits/women/11.jpg', 2999);
+INSERT INTO players (playername, playerimage, playerscore) VALUES ('Big lose person', 'https://randomuser.me/api/portraits/women/42.jpg', 4);
 
 
 -- below scenarios have not actually been added to the table yet, 

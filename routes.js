@@ -75,4 +75,36 @@ routes.get("/ratingnum2/:id", (req, res) => {
   });
 });
 
+//// Logs new player into players Table
+routes.post("/add-player", (req, res) => {
+  const player = req.body;
+  let sql =
+    "INSERT INTO players (playername, playerimage, playerscore) VALUES ($1::text,$2::text, $3::int) RETURNING *";
+  let params = [player.playerName, player.playerImage, player.playerScore];
+  pool.query(sql, params).then(result => {
+    res.status(201);
+    res.json(result.rows);
+  });
+});
+
+//// gets all players
+routes.get("/players", (req, res) => {
+  const sql = "SELECT * FROM players ORDER BY playerscore desc";
+  pool.query(sql).then(result => {
+    res.json(result.rows);
+  });
+});
+//// adds new question
+
+routes.post("/add-question", (req, res) => {
+  const question = req.body;
+  let sql =
+    "INSERT INTO questions (scenario, scenario2, rating, rating2) VALUES($1::text, $2::text, $3::int, $4::int) RETURNING *";
+  let params = [question.scenario, question.scenario2, 1, 1];
+  pool.query(sql, params).then(result => {
+    res.status(201);
+    res.json(result.rows);
+  });
+});
+
 module.exports = routes;
