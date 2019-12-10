@@ -94,6 +94,15 @@ routes.get("/players", (req, res) => {
     res.json(result.rows);
   });
 });
+
+//// gets average of player points
+routes.get("/avg-score", (req, res) => {
+  const sql = "SELECT AVG(playerscore) FROM players";
+  pool.query(sql).then(result => {
+    res.json(result.rows);
+  });
+});
+
 //// adds new question
 
 routes.post("/add-question", (req, res) => {
