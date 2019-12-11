@@ -87,9 +87,17 @@ routes.post("/add-player", (req, res) => {
   });
 });
 
-//// gets all players
-routes.get("/players", (req, res) => {
-  const sql = "SELECT * FROM players ORDER BY playerscore desc";
+//// gets top players
+routes.get("/top-ten", (req, res) => {
+  const sql = "SELECT * FROM players ORDER BY playerscore DESC LIMIT 10";
+  pool.query(sql).then(result => {
+    res.json(result.rows);
+  });
+});
+
+//// gets bottom players
+routes.get("/bottom-ten", (req, res) => {
+  const sql = "SELECT * FROM players ORDER BY playerscore ASC LIMIT 10";
   pool.query(sql).then(result => {
     res.json(result.rows);
   });
