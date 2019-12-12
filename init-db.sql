@@ -60,4 +60,16 @@ insert into questions(scenario, scenario2)
 values('Travel back in time', 'Travel to the future');
 
 insert into questions(scenario, scenario2)
+values('Lose your phone', 'Lose your wallet');
+
+insert into questions(scenario, scenario2)
+values('Be the next Albert Einstein', 'Be the next David Bowie');
+
+insert into questions(scenario, scenario2)
+values('Spend life in prison for a murder you did not commit', 'Spend 20 years in prison for robbing a bank');
+
+insert into questions(scenario, scenario2)
+values('Find out you are actually an android', 'Find out your spouse is an android');
+
+insert into questions(scenario, scenario2)
 values('', '');

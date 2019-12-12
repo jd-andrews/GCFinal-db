@@ -111,8 +111,13 @@ routes.post("/add-question", (req, res) => {
     "INSERT INTO questions (scenario, scenario2, rating, rating2) VALUES($1::text, $2::text, $3::int, $4::int) RETURNING *";
   let params = [question.scenario, question.scenario2, 1, 1];
   pool.query(sql, params).then(result => {
-    res.status(201);
-    res.json(result.rows);
+    if (result.rows.length === 0) {
+      res.status(404);
+      res.send("Not found, ID: " + id);
+    } else {
+      res.status(200);
+      res.json(result.rows);
+    }
   });
 });
 
