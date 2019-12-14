@@ -88,16 +88,34 @@ routes.post("/add-player", (req, res) => {
 });
 
 //// gets top players
-routes.get("/top-ten", (req, res) => {
-  const sql = "SELECT * FROM players ORDER BY playerscore DESC LIMIT 10";
+// routes.get("/top-ten", (req, res) => {
+//   const sql = "SELECT * FROM players ORDER BY playerscore DESC LIMIT 10";
+//   pool.query(sql).then(result => {
+//     res.json(result.rows);
+//   });
+// });
+
+routes.get("/top-sheeple", (req, res) => {
+  const sql =
+    "SELECT * FROM players WHERE (playerscore) >= (SELECT avg(playerscore) FROM players) ORDER BY playerscore DESC limit 10";
   pool.query(sql).then(result => {
     res.json(result.rows);
   });
 });
 
-//// gets bottom players
-routes.get("/bottom-ten", (req, res) => {
-  const sql = "SELECT * FROM players ORDER BY playerscore ASC LIMIT 10";
+// gets bottom players
+// routes.get("/bottom-ten", (req, res) => {
+//   const sql = "SELECT * FROM players ORDER BY playerscore ASC LIMIT 10";
+//   pool.query(sql).then(result => {
+//     res.json(result.rows);
+//   });
+// });
+
+// trying to refactor to get the high scores of the minority answers,
+// not the low scores in general
+routes.get("/top-peeple", (req, res) => {
+  const sql =
+    "SELECT * FROM players WHERE (playerscore) < (SELECT avg(playerscore) FROM players) ORDER BY playerscore DESC limit 10";
   pool.query(sql).then(result => {
     res.json(result.rows);
   });
@@ -107,7 +125,7 @@ routes.get("/bottom-ten", (req, res) => {
 routes.get("/avg-score", (req, res) => {
   const sql = "SELECT AVG(playerscore) FROM players";
   pool.query(sql).then(result => {
-    res.json(result.rows);
+    res.json(result.rows[0]);
   });
 });
 
