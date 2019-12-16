@@ -98,16 +98,11 @@ values('Be feared by all', 'Be loved by all', 1, 1);
 
 insert into questions
     (scenario, scenario2, rating, rating2)
-values('Be poor, but help people', 'Become incredibly rich by hurting people', 1, 1);
-
-
-insert into questions
-    (scenario, scenario2, rating, rating2)
-values('Go to jail for 4 years for something you did not do', 'Get away with something horrible, but always in fear of being caught', 1, 1);
+values('Not make much money, but help people', 'Become incredibly rich by hurting people', 1, 1);
 
 insert into questions
     (scenario, scenario2, rating, rating2)
-values('Live in the wilderness with no human interaction', 'Live on the streets as a homeless person', 1, 1);
+values('Live in the wilderness with no human interaction', 'Live on a deserted island with one random person', 1, 1);
 
 insert into questions
     (scenario, scenario2, rating, rating2)
@@ -143,7 +138,7 @@ values('Be alone for the rest of your life', 'Always be surrounded by annoying p
 
 insert into questions
     (scenario, scenario2, rating, rating2)
-values('Know when you are going to die', 'How you are going to die (You can not change the time, or method of your death)', 1, 1);
+values('Know when you are going to die', 'Know how you are going to die', 1, 1);
 
 insert into questions
     (scenario, scenario2, rating, rating2)
@@ -151,7 +146,7 @@ values('Be fluent in all languages and never travel', 'Be able to travel anywher
 
 insert into questions
     (scenario, scenario2, rating, rating2)
-values('Have everything on your phone(Browsing history, photos, etc)made public to anyone who searches your name', 'Never use a cell phone again', 1, 1);
+values('Have everything on your phone (browsing history, photos, etc) made public to anyone who searches your name', 'Never use a cell phone again', 1, 1);
 
 insert into questions
     (scenario, scenario2, rating, rating2)
@@ -165,9 +160,6 @@ insert into questions
     (scenario, scenario2, rating, rating2)
 values('Know the history of every object you touch', 'Be able to talk to animals', 1, 1);
 
-insert into questions
-    (scenario, scenario2, rating, rating2)
-values('Be married to a 10 with a bad personality', 'A 6 with an amazing personality', 1, 1);
 
 insert into questions
     (scenario, scenario2, rating, rating2)
@@ -175,11 +167,11 @@ values('Have all traffic lights you approach be green', 'Never have to stand in 
 
 insert into questions
     (scenario, scenario2, rating, rating2)
-values('Be able to see 10 minutes into your own future', '10 minutes into the future of anyone but yourself', 1, 1);
+values('Be able to see 10 minutes into your own future', '10 minutes into the future of anyone else', 1, 1);
 
 insert into questions
     (scenario, scenario2, rating, rating2)
-values('Be the first person to explore a planet', 'Be the inventor of a drug that cures a deadly disease', 1, 1);
+values('Discover & explore a new planet', 'Invent a drug that cures a deadly disease', 1, 1);
 
 insert into questions
     (scenario, scenario2, rating, rating2)
@@ -257,9 +249,7 @@ insert into questions
     (scenario, scenario2, rating, rating2)
 values('Be forced to eat only spicy food', 'Only incredibly bland food', 1, 1);
 
-insert into questions
-    (scenario, scenario2, rating, rating2)
-values('Be lost in a bad part of town', 'Lost in the forest', 1, 1);
+
 
 insert into questions
     (scenario, scenario2, rating, rating2)
