@@ -6,27 +6,27 @@ CREATE TABLE questions
     alignment BOOLEAN
 );
 
-INSERT INTO questions
-    (scenario, rating, alignment)
-VALUES
-    ('Pay a $5 fine', 1, false);
-INSERT INTO questions
-    (scenario, rating, alignment)
-VALUES
-    ('Have your dog run away', 1, false);
+-- INSERT INTO questions
+--     (scenario, rating, alignment)
+-- VALUES
+--     ('Pay a $5 fine', 1, false);
+-- INSERT INTO questions
+--     (scenario, rating, alignment)
+-- VALUES
+--     ('Have your dog run away', 1, false);
 
-INSERT INTO questions
-    (scenario, rating, alignment)
-VALUES
-    ('Jump into a frozen lake?', 1, false);
-INSERT INTO questions
-    (scenario, rating, alignment)
-VALUES
-    ('Eat a cockroach', 1, false);
-INSERT INTO questions
-    (scenario, rating, alignment)
-VALUES
-    ('Find $5', 1, true);
+-- INSERT INTO questions
+--     (scenario, rating, alignment)
+-- VALUES
+--     ('Jump into a frozen lake?', 1, false);
+-- INSERT INTO questions
+--     (scenario, rating, alignment)
+-- VALUES
+--     ('Eat a cockroach', 1, false);
+-- INSERT INTO questions
+--     (scenario, rating, alignment)
+-- VALUES
+--     ('Find $5', 1, true);
 
 alter table questions 
 add scenario2 varchar(480);
@@ -35,22 +35,22 @@ add rating2 int;
 
 
 
-update questions
-set scenario2 = 'Steal $100 from a cash register (and get away with it)', rating2=1
-where id=1;
+-- update questions
+-- set scenario2 = 'Steal $100 from a cash register (and get away with it)', rating2=1
+-- where id=1;
 
-update questions
-set rating2=1;
-
-
-update questions
-set scenario2='Give a homeless person $5'
-where id=2;
+-- update questions
+-- set rating2=1;
 
 
-update questions
-set scenario2='Have your cat run away'
-where id=3;
+-- update questions
+-- set scenario2='Give a homeless person $5'
+-- where id=2;
+
+
+-- update questions
+-- set scenario2='Have your cat run away'
+-- where id=3;
 
 insert into questions
     (scenario, scenario2, rating, rating2)
