@@ -79,8 +79,13 @@ routes.get("/ratingnum2/:id", (req, res) => {
 routes.post("/add-player", (req, res) => {
   const player = req.body;
   let sql =
-    "INSERT INTO players (playername, playerimage, playerscore) VALUES ($1::text,$2::text, $3::int) RETURNING *";
-  let params = [player.playerName, player.playerImage, player.playerScore];
+    "INSERT INTO players (playername, playerimage, playerscore, category) VALUES ($1::text,$2::text, $3::int, $4::text) RETURNING *";
+  let params = [
+    player.playerName,
+    player.playerImage,
+    player.playerScore,
+    player.playerCategory
+  ];
   pool.query(sql, params).then(result => {
     res.status(201);
     res.json(result.rows);
@@ -97,7 +102,7 @@ routes.post("/add-player", (req, res) => {
 
 routes.get("/top-sheeple", (req, res) => {
   const sql =
-    "SELECT * FROM players WHERE (playerscore) >= (SELECT avg(playerscore) FROM players) ORDER BY playerscore DESC limit 10";
+    "SELECT * FROM players WHERE category='sheeple' ORDER BY playerscore DESC limit 10";
   pool.query(sql).then(result => {
     res.json(result.rows);
   });
@@ -115,7 +120,7 @@ routes.get("/top-sheeple", (req, res) => {
 // not the low scores in general
 routes.get("/top-peeple", (req, res) => {
   const sql =
-    "SELECT * FROM players WHERE (playerscore) < (SELECT avg(playerscore) FROM players) ORDER BY playerscore DESC limit 10";
+    "SELECT * FROM players WHERE category='peeple' ORDER BY playerscore DESC limit 10";
   pool.query(sql).then(result => {
     res.json(result.rows);
   });
